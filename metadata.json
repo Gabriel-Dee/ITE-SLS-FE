@@ -1,0 +1,6 @@
+{
+  "name": "Florida–Puerto Rico District ITE Student Leadership Summit",
+  "description": "The official web platform for the upcoming ITE Student Leadership Summit, featuring interactive schedules, Traffic Bowl trivia, lodging logistics, and ticket registration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
