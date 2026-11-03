@@ -10,6 +10,7 @@ import bowl1280 from './assets/images/traffic-bowl-fiu-uf-unf-1280.webp';
 import bowl1920 from './assets/images/traffic-bowl-fiu-uf-unf-1920.webp';
 import imgBowlTeams from './assets/images/traffic_bowl_teams.webp';
 import imgUnfCampus from './assets/images/unf-campus-905.webp';
+import imgDistrictLogo from './assets/images/ite-fprd-logo.png';
 import imgIteUnfLogo from './assets/images/ite-unf-student-chapter-logo-white.png';
 import imgIteUnfLogoColor from './assets/images/ite-unf-student-chapter-logo-osprey.png';
 
@@ -231,11 +232,11 @@ function ShowroomChapter({
               <button
                 type="button"
                 className="nav-brand"
-                aria-label="ITE SLS 2027 — back to top"
+                aria-label="ITE Florida Puerto Rico District — SLS 2027, back to top"
                 onClick={() => window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' })}
               >
-                <span className="nav-brand-mark">ITE SLS</span>
-                <span className="nav-brand-sub">Florida–Puerto Rico · 2027</span>
+                <img className="nav-brand-logo" src={imgDistrictLogo} alt="" width={188} height={66} />
+                <span className="nav-brand-mark">SLS 2027</span>
               </button>
               <nav className="nav-links" aria-label="Primary">
                 {navItems.map((n) => (
@@ -544,6 +545,13 @@ function ShowroomChapter({
                 <p className="eyebrow">Supporting partners</p>
                 <h2 className="section-title">Sponsors</h2>
                 <p className="section-lead">Our 2027 sponsors will be announced here. Every tier is open — yours could be the first logo on this page.</p>
+              </div>
+              <div className="district-support">
+                <img src={imgDistrictLogo} alt="ITE Florida Puerto Rico District" width={188} height={66} />
+                <p>
+                  <span className="district-support-label">Supported by</span>
+                  The ITE Florida–Puerto Rico District, the parent organization of the district’s student chapters, supports the planning of SLS 2027.
+                </p>
               </div>
               {sponsorPackages.map(({ tier }) => (
                 <div key={tier} className="tier-block">

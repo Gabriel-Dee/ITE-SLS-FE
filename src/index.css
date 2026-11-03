@@ -223,8 +223,8 @@
     }
     .nav-brand {
       display: flex;
-      flex-direction: column;
-      gap: 2px;
+      align-items: center;
+      gap: var(--space-3);
       cursor: pointer;
       background: transparent;
       border: 0;
@@ -236,18 +236,24 @@
       box-shadow: var(--focus-ring);
       border-radius: var(--radius-sm);
     }
+    /* District logo: white over the hero photo, full color once the header turns white */
+    .nav-brand-logo {
+      display: block;
+      height: 36px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter var(--motion-base);
+    }
     .nav-brand-mark {
+      padding-left: var(--space-3);
+      border-left: 1px solid currentColor;
       font-family: var(--font-display);
       font-size: var(--text-xl);
       font-weight: 700;
       letter-spacing: 0.12em;
+      line-height: 1;
       color: var(--bg);
       text-transform: uppercase;
-    }
-    .nav-brand-sub {
-      font-size: var(--text-xs);
-      color: color-mix(in oklab, var(--bg) 78%, transparent);
-      font-weight: 600;
     }
     .nav-links {
       display: none;
@@ -289,9 +295,9 @@
     .site-header.is-solid .nav-toggle {
       color: var(--fg);
     }
-    .site-header.is-scrolled .nav-brand-sub,
-    .site-header.is-solid .nav-brand-sub {
-      color: var(--muted);
+    .site-header.is-scrolled .nav-brand-logo,
+    .site-header.is-solid .nav-brand-logo {
+      filter: none;
     }
     .site-header.is-scrolled .nav-links button:hover,
     .site-header.is-solid .nav-links button:hover,
@@ -1165,6 +1171,34 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
       gap: var(--space-4);
+    }
+    .district-support {
+      display: flex;
+      align-items: center;
+      gap: var(--space-6);
+      margin-bottom: var(--space-12);
+      padding: var(--space-6) 0;
+      border-block: 1px solid var(--border-soft);
+    }
+    .district-support img {
+      flex: none;
+      width: 160px;
+      height: auto;
+    }
+    .district-support p {
+      color: var(--fg-2);
+      font-size: var(--text-base);
+      max-width: 60ch;
+    }
+    .district-support-label {
+      display: block;
+      margin-bottom: var(--space-1);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--muted);
+    }
+    @media (max-width: 600px) {
+      .district-support { flex-direction: column; align-items: flex-start; gap: var(--space-4); }
     }
     .sponsor-tile {
       padding: var(--space-6) 0;
