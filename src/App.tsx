@@ -1,17 +1,26 @@
 import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react';
-import { scheduleData, triviaQuestions, sponsorPackages, EVENT_DATES } from './data';
-import imgHighlights from './assets/images/event_highlights_sh_1781725533655.jpg';
-import imgCompetitions from './assets/images/traffic_bowl_teams.webp';
-import imgNetworking from './assets/images/networking_sh_1781725561546.jpg';
-import imgUnfHost from './assets/images/unf_host_sh_1781725574904.jpg';
+import { scheduleData, triviaQuestions, sponsorPackages, EVENT_DATES, EVENT_PHOTOS_URL, PHOTOS_FROM } from './data';
+import hero800 from './assets/images/event-highlights-800.webp';
+import hero1200 from './assets/images/event-highlights-1200.webp';
+import tmc800 from './assets/images/tmc-tour-800.webp';
+import tmc1280 from './assets/images/tmc-tour-1280.webp';
+import tmc1920 from './assets/images/tmc-tour-1920.webp';
+import bowl800 from './assets/images/traffic-bowl-fiu-uf-unf-800.webp';
+import bowl1280 from './assets/images/traffic-bowl-fiu-uf-unf-1280.webp';
+import bowl1920 from './assets/images/traffic-bowl-fiu-uf-unf-1920.webp';
+import imgBowlTeams from './assets/images/traffic_bowl_teams.webp';
+import imgUnfCampus from './assets/images/unf-campus-905.webp';
 import imgIteUnfLogo from './assets/images/ite-unf-student-chapter-logo-white.png';
 import imgIteUnfLogoColor from './assets/images/ite-unf-student-chapter-logo-osprey.png';
 
+const tmcSrcSet = `${tmc800} 800w, ${tmc1280} 1280w, ${tmc1920} 1920w`;
+const bowlSrcSet = `${bowl800} 800w, ${bowl1280} 1280w, ${bowl1920} 1920w`;
+
+// Past-summit photos until the 2027 album fills up (see EVENT_PHOTOS_URL).
 const galleryItems = [
-      { id: 'g1', url: imgHighlights, title: 'Keynote Plenary Session', category: 'highlights', description: 'Opening keynote on coastal transit evacuations and autonomous vehicle lanes.' },
-      { id: 'g2', url: imgCompetitions, title: 'Collegiate Traffic Bowl Finals', category: 'competitions', description: 'FAMU-FSU, FAU, and UF teams at their buzzer tables with delegates after a Collegiate Traffic Bowl round.' },
-      { id: 'g3', url: imgNetworking, title: 'Micro-Mentorship Speed Session', category: 'networking', description: 'Delegates reviewing resumes with transit chiefs and agency HR teams.' },
-      { id: 'g4', url: imgUnfHost, title: 'Host Campus Reception', category: 'highlights', description: 'Campus welcome for Florida–Puerto Rico District student chapters.' },
+      { id: 'g1', thumb: tmc800, url: tmc1920, title: 'Traffic operations center tour', description: 'Past summit — delegates touring a traffic operations center and its camera video wall.' },
+      { id: 'g2', thumb: bowl800, url: bowl1920, title: 'Collegiate Traffic Bowl', description: 'Past summit — FIU, UF, and UNF teams hold up their answers during a Traffic Bowl round.' },
+      { id: 'g3', thumb: imgBowlTeams, url: imgBowlTeams, title: 'Traffic Bowl teams', description: 'Past summit — FAMU-FSU, FAU, and UF teams at their buzzer tables with delegates.' },
     ];
 
     const DAYS = [
@@ -30,6 +39,8 @@ function Icon({ d, size = 20 }: { d: string; size?: number }) {
 function ShowroomChapter({
   odId,
   image,
+  srcSet,
+  position,
   alt,
   eyebrow,
   title,
@@ -39,6 +50,8 @@ function ShowroomChapter({
 }: {
   odId: string;
   image: string;
+  srcSet?: string;
+  position?: string;
   alt: string;
   eyebrow?: string;
   title: string;
@@ -49,7 +62,7 @@ function ShowroomChapter({
       return (
         <section className="showroom-chapter" data-od-id={odId} aria-label={title}>
           <div className="showroom-media">
-            <img src={image} alt={alt} loading="lazy" />
+            <img src={image} srcSet={srcSet} sizes="100vw" alt={alt} loading="lazy" decoding="async" style={position ? { objectPosition: position } : undefined} />
           </div>
           <div className="showroom-scrim" aria-hidden="true" />
           <div className="showroom-content reveal-target">
@@ -80,7 +93,6 @@ function ShowroomChapter({
       const [triviaScore, setTriviaScore] = useState(0);
       const [triviaDone, setTriviaDone] = useState(false);
 
-      const [galleryCat, setGalleryCat] = useState('all');
       const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
 
       const lightboxCloseRef = useRef(null);
@@ -145,13 +157,9 @@ function ShowroomChapter({
         };
       }, [lightboxIdx]);
 
-      const filteredGallery = useMemo(() => {
-        return galleryItems.filter((g) => galleryCat === 'all' || g.category === galleryCat);
-      }, [galleryCat]);
-
       useEffect(() => {
         if (lightboxIdx === null) return;
-        const len = filteredGallery.length || 1;
+        const len = galleryItems.length;
         const onKey = (e) => {
           if (e.key === 'Escape') setLightboxIdx(null);
           if (e.key === 'ArrowRight') setLightboxIdx((i) => ((i ?? 0) + 1) % len);
@@ -159,18 +167,7 @@ function ShowroomChapter({
         };
         window.addEventListener('keydown', onKey);
         return () => window.removeEventListener('keydown', onKey);
-      }, [lightboxIdx, filteredGallery.length]);
-
-      useEffect(() => {
-        if (lightboxIdx === null) return;
-        if (filteredGallery.length === 0) {
-          setLightboxIdx(null);
-          return;
-        }
-        if (lightboxIdx >= filteredGallery.length) {
-          setLightboxIdx(0);
-        }
-      }, [lightboxIdx, filteredGallery.length]);
+      }, [lightboxIdx]);
 
       const scrollTo = (id) => {
         setMobileOpen(false);
@@ -263,7 +260,7 @@ function ShowroomChapter({
           <main id="main">
           <section className="hero" data-od-id="hero" aria-label="Summit hero">
             <div className="hero-media">
-              <img src={imgHighlights} alt="Summit plenary session" />
+              <img src={hero1200} srcSet={`${hero800} 800w, ${hero1200} 1200w`} sizes="100vw" alt="Speaker presenting to a seated audience at a transportation summit" fetchPriority="high" />
             </div>
             <div className="hero-scrim" aria-hidden="true" />
             <div className="hero-content">
@@ -322,8 +319,9 @@ function ShowroomChapter({
 
           <ShowroomChapter
             odId="chapter-host"
-            image={imgUnfHost}
-            alt="Host campus reception at UNF"
+            image={imgUnfCampus}
+            position="center 62%"
+            alt="University of North Florida building entrance with a large UNF Osprey sign beneath a glass canopy at dusk"
             eyebrow="Host campus"
             title="University of North Florida"
             lead={
@@ -409,8 +407,10 @@ function ShowroomChapter({
 
           <ShowroomChapter
             odId="chapter-competitions"
-            image={imgCompetitions}
-            alt="Collegiate Traffic Bowl teams from FAMU-FSU, FAU, and UF at their tables with traffic-signal buzzers, surrounded by summit delegates"
+            image={bowl1280}
+            srcSet={bowlSrcSet}
+            position="center 55%"
+            alt="FIU, UF, and UNF Collegiate Traffic Bowl teams hold up answer cards at their buzzer tables while a packed room of delegates watches"
             eyebrow="Saturday championship"
             title="Traffic Bowl"
             lead="Jeopardy-style MUTCD, Green Book, and safety standards — Saturday afternoon finals."
@@ -470,11 +470,13 @@ function ShowroomChapter({
 
           <ShowroomChapter
             odId="chapter-networking"
-            image={imgNetworking}
-            alt="Micro-mentorship and networking at the summit"
+            image={tmc1280}
+            srcSet={tmcSrcSet}
+            position="center 40%"
+            alt="Summit delegates gathered in a traffic operations center in front of a wall of live traffic camera feeds and maps"
             eyebrow="Professional corridor"
-            title="Micro-mentorship"
-            lead="Speed sessions with transit chiefs and agency HR — Friday afternoon with resume reviews, plus the Saturday Career Fair."
+            title="Networking"
+            lead="Meet engineers, agency leaders, and students from across the district — Friday networking and resume reviews, plus the Saturday Career Fair."
             ctaLabel="See schedule"
             onCta={() => scrollTo('schedule')}
           />
@@ -482,29 +484,25 @@ function ShowroomChapter({
           <section id="gallery" className="section section-alt" data-od-id="gallery">
             <div className="container">
               <div className="section-head center">
-                <p className="eyebrow">Moments from the corridor</p>
+                <p className="eyebrow">Event photos</p>
                 <h2 className="section-title">Photo gallery</h2>
-              </div>
-              <div className="gallery-toolbar" role="tablist" aria-label="Gallery category">
-                {['all', 'highlights', 'competitions', 'networking'].map((c) => (
-                  <button key={c} type="button" role="tab" className={`chip${galleryCat === c ? ' active' : ''}`} aria-selected={galleryCat === c} onClick={() => setGalleryCat(c)}>
-                    {c === 'all' ? 'All' : c.charAt(0).toUpperCase() + c.slice(1)}
-                  </button>
-                ))}
+                <p className="section-lead">
+                  {EVENT_PHOTOS_URL
+                    ? 'Every SLS 2027 photo, added during and after the summit.'
+                    : `SLS 2027 photos will appear here starting ${PHOTOS_FROM}, and keep coming in during and after the summit. Until then, a few moments from past summits.`}
+                </p>
+                {EVENT_PHOTOS_URL ? (
+                  <div className="cta-row" style={{ justifyContent: 'center', marginTop: 24 }}>
+                    <a className="btn btn-dark" href={EVENT_PHOTOS_URL} target="_blank" rel="noopener noreferrer">View all event photos</a>
+                  </div>
+                ) : null}
               </div>
               <div className="gallery-grid">
-                {filteredGallery.length === 0 ? (
-                  <div className="empty-state" style={{ gridColumn: '1 / -1' }}>
-                    <p>No photos in this category yet.</p>
-                    <button type="button" className="btn btn-secondary" style={{ marginTop: 16 }} onClick={() => setGalleryCat('all')}>Show all photos</button>
-                  </div>
-                ) : (
-                  filteredGallery.map((g, i) => (
-                    <button key={g.id} type="button" className="gallery-item" onClick={() => setLightboxIdx(i)} aria-label={`Open ${g.title}`}>
-                      <img src={g.url} alt={g.title} loading="lazy" decoding="async" />
-                    </button>
-                  ))
-                )}
+                {galleryItems.map((g, i) => (
+                  <button key={g.id} type="button" className="gallery-item" onClick={() => setLightboxIdx(i)} aria-label={`Open ${g.title}`}>
+                    <img src={g.thumb} alt={g.description} loading="lazy" decoding="async" />
+                  </button>
+                ))}
               </div>
             </div>
           </section>
@@ -676,15 +674,15 @@ function ShowroomChapter({
             </div>
           </footer>
 
-          {lightboxIdx !== null && filteredGallery[lightboxIdx] && (
-            <div className="lightbox" role="dialog" aria-modal="true" aria-label={filteredGallery[lightboxIdx].title} onClick={() => setLightboxIdx(null)}>
+          {lightboxIdx !== null && galleryItems[lightboxIdx] && (
+            <div className="lightbox" role="dialog" aria-modal="true" aria-label={galleryItems[lightboxIdx].title} onClick={() => setLightboxIdx(null)}>
               <div className="lightbox-inner" onClick={(e) => e.stopPropagation()}>
-                <img src={filteredGallery[lightboxIdx].url} alt={filteredGallery[lightboxIdx].title} />
+                <img src={galleryItems[lightboxIdx].url} alt={galleryItems[lightboxIdx].title} />
                 <div className="lightbox-nav">
-                  <button type="button" aria-label="Previous photo" onClick={() => setLightboxIdx((i) => (i - 1 + filteredGallery.length) % filteredGallery.length)}>Previous</button>
+                  <button type="button" aria-label="Previous photo" onClick={() => setLightboxIdx((i) => (i - 1 + galleryItems.length) % galleryItems.length)}>Previous</button>
                   <div className="lightbox-meta">
-                    <div style={{ fontWeight: 500 }}>{filteredGallery[lightboxIdx].title}</div>
-                    <div className="lightbox-desc">{filteredGallery[lightboxIdx].description}</div>
+                    <div style={{ fontWeight: 500 }}>{galleryItems[lightboxIdx].title}</div>
+                    <div className="lightbox-desc">{galleryItems[lightboxIdx].description}</div>
                   </div>
                   <button type="button" ref={lightboxCloseRef} aria-label="Close gallery" onClick={() => setLightboxIdx(null)}>Close</button>
                 </div>

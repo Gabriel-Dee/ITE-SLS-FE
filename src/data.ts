@@ -1,7 +1,11 @@
 import { ScheduleItem, TriviaQuestion, SponsorPackage } from './types';
 
-// Also update DAYS labels in App.tsx and gallery dates in galleryData.ts if this changes.
+// Also update DAYS labels in App.tsx and PHOTOS_FROM below if this changes.
 export const EVENT_DATES = 'February 12–13, 2027';
+
+// Shared OneDrive album for SLS 2027 photos. Empty = gallery shows the "photos from" note and no button.
+export const EVENT_PHOTOS_URL = '';
+export const PHOTOS_FROM = 'February 12, 2027';
 
 export const scheduleData: ScheduleItem[] = [
   // Day 1: Friday, Feb 12
