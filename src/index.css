@@ -1217,9 +1217,7 @@
       flex-direction: column;
       padding: var(--space-6);
       background: var(--bg);
-      border-radius: var(--radius-md);
-      border-top: 6px solid var(--tier);
-      box-shadow: var(--elev-raised), var(--elev-ring);
+      border: 1px solid var(--border-soft);
     }
     .package-diamond { --tier: #1c3f6e; }
     .package-gold    { --tier: #b5893b; }
@@ -1262,9 +1260,8 @@
       position: absolute;
       left: 0;
       top: 0.55em;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
+      width: 6px;
+      height: 6px;
       background: var(--tier);
     }
     #sponsor-notify { scroll-margin-top: 80px; }
