@@ -8,10 +8,10 @@ export interface ScheduleItem {
   time: string;
   speaker?: string;
   speakerTitle?: string;
-  location: string;
+  location?: string;
   category: 'general' | 'technical' | 'career' | 'social' | 'competition';
-  day: number; // 1, 2, or 3
-  description: string;
+  day: number; // 1 or 2
+  description?: string;
 }
 
 export interface TriviaQuestion {
@@ -22,11 +22,12 @@ export interface TriviaQuestion {
   explanation: string;
 }
 
-export interface Sponsor {
-  id: string;
-  name: string;
-  tier: 'Diamond' | 'Platinum' | 'Gold' | 'Silver';
-  industry: string;
+export type SponsorTier = 'Diamond' | 'Gold' | 'Silver' | 'Bronze';
+
+export interface SponsorPackage {
+  tier: SponsorTier;
+  price: number;
+  perks: string[];
 }
 
 export interface AttendeeRegistration {

@@ -499,7 +499,7 @@
     .about-band-title-line,
     .about-band-title .about-band-muted {
       display: block;
-      white-space: nowrap;
+      text-wrap: balance;
     }
     .about-band-muted {
       color: var(--osprey-blue);
@@ -548,10 +548,6 @@
         gap: var(--space-5);
       }
       .about-band-title { max-width: none; }
-      .about-band-title-line,
-      .about-band-title .about-band-muted {
-        white-space: normal;
-      }
       .about-band-copy {
         display: block;
         -webkit-line-clamp: unset;
@@ -1189,6 +1185,90 @@
       color: var(--muted);
       margin-top: var(--space-1);
     }
+    .sponsor-tile-empty .sponsor-name { color: var(--muted); }
+    .sponsor-link {
+      padding: 0;
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .sponsor-link:hover { color: var(--fg-2); }
+
+    /* Sponsorship packages: pricing cards, tier colors from the call-for-sponsors flyer */
+    .packages-head {
+      margin-top: var(--space-12);
+      padding-top: var(--space-12);
+      border-top: 1px solid var(--border-soft);
+      text-align: center;
+      scroll-margin-top: 80px;
+    }
+    .packages-head .section-lead { margin: var(--space-4) auto 0; }
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--space-5);
+      margin-top: var(--space-8);
+    }
+    @media (max-width: 1100px) { .package-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .package-grid { grid-template-columns: 1fr; } }
+    .package-card {
+      --tier: var(--fg);
+      display: flex;
+      flex-direction: column;
+      padding: var(--space-6);
+      background: var(--bg);
+      border-radius: var(--radius-md);
+      border-top: 6px solid var(--tier);
+      box-shadow: var(--elev-raised), var(--elev-ring);
+    }
+    .package-diamond { --tier: #1c3f6e; }
+    .package-gold    { --tier: #b5893b; }
+    .package-silver  { --tier: #6b7280; }
+    .package-bronze  { --tier: #94572f; }
+    .package-tier {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--tier);
+    }
+    .package-price {
+      margin: var(--space-2) 0 var(--space-5);
+      font-family: var(--font-display);
+      font-size: var(--text-4xl);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--fg);
+    }
+    .package-perks {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      margin: 0 0 var(--space-6);
+      padding: var(--space-5) 0 0;
+      border-top: 1px solid var(--border-soft);
+      list-style: none;
+      color: var(--fg-2);
+      font-size: var(--text-base);
+    }
+    .package-perks li {
+      position: relative;
+      padding-left: 22px;
+    }
+    .package-perks li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--tier);
+    }
+    #sponsor-notify { scroll-margin-top: 80px; }
+
     .sponsor-form-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1495,4 +1575,3 @@
       min-width: 2ch;
       text-align: center;
     }
-  

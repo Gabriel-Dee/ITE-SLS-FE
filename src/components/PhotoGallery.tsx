@@ -737,7 +737,7 @@ export default function PhotoGallery() {
               </div>
               <div className="flex items-center gap-1">
                 <Calendar className="w-3.5 h-3.5 text-slate-500" />
-                <span>Event Date: <span className="text-slate-200">{activeItem.date || 'Feb 6, 2027'}</span></span>
+                <span>Event Date: <span className="text-slate-200">{activeItem.date || 'Feb 13, 2027'}</span></span>
               </div>
               <div className="flex items-center gap-1 ml-auto">
                 <span className="text-slate-500">Navigation hint: use Left/Right arrows on keyboard</span>
