@@ -41,8 +41,10 @@ export interface AttendeeRegistration {
 
 export interface TeamMember {
   name: string;
-  role: string;
+  role?: string;
+  bio?: string;
   photo?: string; // imported image; initials show until there is one
+  link?: { label: string; url: string };
 }
 
 export interface TeamGroup {

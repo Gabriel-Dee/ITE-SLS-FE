@@ -1,4 +1,5 @@
 import { ScheduleItem, TriviaQuestion, SponsorPackage, TeamGroup } from './types';
+import imgGabriel from './assets/images/team-gabriel-minzemalulu.webp';
 
 // Also update DAYS labels in App.tsx and PHOTOS_FROM below if this changes.
 export const EVENT_DATES = 'February 12–13, 2027';
@@ -9,8 +10,39 @@ export const PHOTOS_FROM = 'February 12, 2027';
 
 // Organizing team. A group with no members stays hidden; with no members at all, so do the section and its nav link.
 export const teamGroups: TeamGroup[] = [
-  { title: 'Faculty advisors', members: [] },
-  { title: 'Student organizing team', members: [] },
+  {
+    title: 'Faculty advisors',
+    members: [
+      {
+        name: 'Dr. Thobias Sando',
+        role: 'Professor of Civil Engineering',
+        bio: 'Directs the UNF Transportation Engineering Lab. A licensed Professional Engineer and Professional Traffic Operations Engineer with a Ph.D. in transportation from Florida State University, working in traffic operations, highway safety, transportation planning, and traffic flow modeling.',
+        link: { label: 'UNF faculty profile', url: 'https://webapps.unf.edu/faculty/bio/N00612281/thobias-sando' },
+      },
+      {
+        name: 'Dr. Pruthvi Manjunatha',
+        role: 'Assistant Professor of Civil Engineering',
+        bio: 'Works on connected and autonomous vehicles, intelligent transportation systems, traffic simulation, traffic engineering, and human factors. Holds a Ph.D. in civil engineering from the University of Florida.',
+        link: { label: 'UNF faculty profile', url: 'https://webapps.unf.edu/faculty/bio/N01654005/pruthvi-manjunatha' },
+      },
+    ],
+  },
+  {
+    title: 'Student organizing team',
+    members: [
+      { name: 'Gabriel Minzemalulu', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/gabriel-minzemalulu/' }, photo: imgGabriel },
+      { name: 'JR Butoto', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jrbutoto/' } },
+      { name: 'Raymond Manento', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/raymond-manento/' } },
+      { name: 'Deogratias Nyamhanga', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/deogratias-nyamhanga/' } },
+      { name: 'Samuel Nye', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/samuel-nye-166850393/' } },
+      { name: 'Henry Kasirye', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/henry-kasirye-765088340/' } },
+      { name: 'Robert Daniel', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/eng-robert-daniel-103912235/' } },
+      { name: 'Adrian Figueroa', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adrian-figueroa-7807a4305/' } },
+      { name: 'Esther Bukuru', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/esther-bukuru-b85948305/' } },
+      { name: 'Abduel Mfangavo', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/abduel-mfangavo-7869b8222/' } },
+      { name: 'Joshua Mchaina', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/joshua-mchaina-7a6292156/' } },
+    ],
+  },
 ];
 
 export const scheduleData: ScheduleItem[] = [

@@ -1207,6 +1207,28 @@
       font-size: var(--text-sm);
       color: var(--muted);
     }
+    .team-bio {
+      margin-top: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--fg-2);
+    }
+    .team-link {
+      display: inline-block;
+      margin-top: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--fg);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    /* Faculty with bios: photo beside the text, since a bio won't fit a narrow column */
+    .team-grid-bios { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+    .team-grid-bios .team-member {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: var(--space-4);
+      align-items: start;
+    }
+    .team-grid-bios .team-name { margin-top: 0; }
     .district-support {
       display: flex;
       align-items: center;

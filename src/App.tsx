@@ -634,7 +634,7 @@ function ShowroomChapter({
                 {shownTeamGroups.map((g) => (
                   <div key={g.title} className="tier-block">
                     <p className="tier-label">{g.title}</p>
-                    <div className="team-grid">
+                    <div className={`team-grid${g.members.some((m) => m.bio) ? ' team-grid-bios' : ''}`}>
                       {g.members.map((m) => (
                         <article key={m.name} className="team-member">
                           {m.photo ? (
@@ -644,8 +644,12 @@ function ShowroomChapter({
                               {m.name.split(' ').filter((w) => !w.endsWith('.')).map((w) => w[0]).slice(0, 2).join('')}
                             </div>
                           )}
-                          <h3 className="team-name">{m.name}</h3>
-                          <p className="team-role">{m.role}</p>
+                          <div>
+                            <h3 className="team-name">{m.name}</h3>
+                            {m.role ? <p className="team-role">{m.role}</p> : null}
+                            {m.bio ? <p className="team-bio">{m.bio}</p> : null}
+                            {m.link ? <a className="team-link" href={m.link.url} target="_blank" rel="noopener noreferrer">{m.link.label}</a> : null}
+                          </div>
                         </article>
                       ))}
                     </div>
