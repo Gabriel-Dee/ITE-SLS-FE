@@ -1204,6 +1204,7 @@
     }
     .team-role {
       margin-top: var(--space-1);
+      white-space: pre-line;
       font-size: var(--text-sm);
       color: var(--muted);
     }
