@@ -20,7 +20,7 @@ npm install
 npm run dev
 ```
 
-App: http://localhost:3000
+App: http://localhost:4173
 
 ```bash
 npm run lint    # tsc --noEmit
