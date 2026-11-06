@@ -26,8 +26,8 @@
       --success: #16a34a;
       --warn: #eab308;
       --danger: #dc2626;
-      --font-display: "Universal Sans Display", -apple-system, Arial, sans-serif;
-      --font-body: "Universal Sans Text", -apple-system, Arial, sans-serif;
+      --font-display: -apple-system, Arial, sans-serif;
+      --font-body: -apple-system, Arial, sans-serif;
       --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Monaco, Consolas, monospace;
       --text-xs: 12px;
       --text-sm: 13px;
@@ -383,7 +383,8 @@
       inset: 0;
       background:
         linear-gradient(180deg, rgba(10, 35, 63, 0.6) 0, transparent 140px),
-        linear-gradient(105deg, rgba(10, 35, 63, 0.72) 0%, rgba(10, 35, 63, 0.38) 42%, rgba(10, 35, 63, 0.12) 70%, transparent 100%),
+        /* Eased stops so the fade has no visible edge */
+        linear-gradient(105deg, rgba(10, 35, 63, 0.88) 0%, rgba(10, 35, 63, 0.84) 12%, rgba(10, 35, 63, 0.74) 24%, rgba(10, 35, 63, 0.6) 36%, rgba(10, 35, 63, 0.44) 48%, rgba(10, 35, 63, 0.28) 60%, rgba(10, 35, 63, 0.15) 72%, rgba(10, 35, 63, 0.06) 84%, rgba(10, 35, 63, 0) 100%),
         linear-gradient(180deg, rgba(10, 35, 63, 0.15) 0%, rgba(10, 35, 63, 0.45) 100%);
       z-index: 1;
     }
@@ -557,7 +558,7 @@
       letter-spacing: 0.06em;
       font-weight: 600;
       font-size: 11px;
-      color: var(--osprey-gray);
+      color: var(--muted);
       margin-top: 4px;
     }
     @media (max-width: 900px) {
@@ -605,7 +606,7 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(180deg, rgba(23, 26, 32, 0.25) 0%, rgba(23, 26, 32, 0.35) 40%, rgba(23, 26, 32, 0.78) 100%);
+        linear-gradient(180deg, rgba(10, 35, 63, 0.25) 0%, rgba(10, 35, 63, 0.35) 40%, rgba(10, 35, 63, 0.78) 100%);
       z-index: 1;
     }
     .showroom-content {
@@ -1160,7 +1161,6 @@
       width: 6px;
       height: 6px;
       background: var(--fg);
-      border-radius: 50%;
     }
 
     /* Sponsors */

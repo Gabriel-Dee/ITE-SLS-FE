@@ -296,7 +296,7 @@ function ShowroomChapter({
               </p>
               <div className="cta-row hero-cta">
                 <button type="button" className="btn btn-primary" onClick={() => scrollTo('registration')}>Registration info</button>
-                <button type="button" className="btn btn-secondary btn-on-dark" onClick={() => scrollTo('schedule')}>View Schedule</button>
+                <button type="button" className="btn btn-secondary btn-on-dark" onClick={() => scrollTo('schedule')}>View schedule</button>
               </div>
             </div>
           </section>
