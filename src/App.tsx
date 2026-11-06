@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react';
+import { useState, useMemo, useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 import { scheduleData, triviaQuestions, sponsorPackages, teamGroups, EVENT_DATES, EVENT_PHOTOS_URL, PHOTOS_FROM } from './data';
 import hero800 from './assets/images/hero-group-800.webp';
 import hero1280 from './assets/images/hero-group-1280.webp';
@@ -26,6 +26,16 @@ const galleryItems = [
     ];
 
     const shownTeamGroups = teamGroups.filter((g) => g.members.length > 0);
+
+    // Two full-width rows on wide screens (11 people: 6 + 5). A grid of top x bottom columns lets both rows fill it exactly.
+    function teamRowSpans(count: number) {
+      const top = Math.ceil(count / 2);
+      const bottom = Math.max(count - top, 1);
+      return {
+        grid: { '--team-cols': top * bottom } as CSSProperties,
+        member: (i: number) => ({ '--team-span': i < top ? bottom : top }) as CSSProperties,
+      };
+    }
 
     const DAYS = [
       { num: 1, label: 'Fri, Feb 12' },
@@ -631,12 +641,15 @@ function ShowroomChapter({
                   <h2 className="section-title">Organizing team</h2>
                   <p className="section-lead">SLS 2027 is organized by the ITE Student Chapter at the University of North Florida.</p>
                 </div>
-                {shownTeamGroups.map((g) => (
+                {shownTeamGroups.map((g) => {
+                  const hasBios = g.members.some((m) => m.bio);
+                  const rows = teamRowSpans(g.members.length);
+                  return (
                   <div key={g.title} className="tier-block">
                     <p className="tier-label">{g.title}</p>
-                    <div className={`team-grid${g.members.some((m) => m.bio) ? ' team-grid-bios' : ''}`}>
-                      {g.members.map((m) => (
-                        <article key={m.name} className="team-member">
+                    <div className={`team-grid ${hasBios ? 'team-grid-bios' : 'team-grid-rows'}`} style={hasBios ? undefined : rows.grid}>
+                      {g.members.map((m, i) => (
+                        <article key={m.name} className="team-member" style={hasBios ? undefined : rows.member(i)}>
                           {m.photo ? (
                             <img className="team-photo" src={m.photo} alt={m.name} loading="lazy" decoding="async" />
                           ) : (
@@ -654,7 +667,8 @@ function ShowroomChapter({
                       ))}
                     </div>
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </section>
           )}

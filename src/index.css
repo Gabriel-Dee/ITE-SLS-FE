@@ -1181,6 +1181,10 @@
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
       gap: var(--space-6) var(--space-4);
     }
+    @media (min-width: 960px) {
+      .team-grid-rows { grid-template-columns: repeat(var(--team-cols), 1fr); }
+      .team-grid-rows .team-member { grid-column: span var(--team-span); min-width: 0; }
+    }
     .team-photo {
       display: block;
       width: 100%;
@@ -1223,7 +1227,7 @@
       text-underline-offset: 3px;
     }
     /* Faculty with bios: photo beside the text, since a bio won't fit a narrow column */
-    .team-grid-bios { grid-template-columns: repeat(auto-fill, minmax(min(100%, 420px), 1fr)); }
+    .team-grid-bios { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
     .team-grid-bios .team-member {
       display: grid;
       grid-template-columns: 120px 1fr;
