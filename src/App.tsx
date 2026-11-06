@@ -1,7 +1,8 @@
 import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react';
 import { scheduleData, triviaQuestions, sponsorPackages, EVENT_DATES, EVENT_PHOTOS_URL, PHOTOS_FROM } from './data';
-import hero800 from './assets/images/event-highlights-800.webp';
-import hero1200 from './assets/images/event-highlights-1200.webp';
+import hero800 from './assets/images/hero-group-800.webp';
+import hero1280 from './assets/images/hero-group-1280.webp';
+import hero1920 from './assets/images/hero-group-1920.webp';
 import tmc800 from './assets/images/tmc-tour-800.webp';
 import tmc1280 from './assets/images/tmc-tour-1280.webp';
 import tmc1920 from './assets/images/tmc-tour-1920.webp';
@@ -261,7 +262,7 @@ function ShowroomChapter({
           <main id="main">
           <section className="hero" data-od-id="hero" aria-label="Summit hero">
             <div className="hero-media">
-              <img src={hero1200} srcSet={`${hero800} 800w, ${hero1200} 1200w`} sizes="100vw" alt="Speaker presenting to a seated audience at a transportation summit" fetchPriority="high" />
+              <img src={hero1280} srcSet={`${hero800} 800w, ${hero1280} 1280w, ${hero1920} 1920w`} sizes="100vw" alt="Student delegates with name badges smiling together in front of an ITE Florida Puerto Rico District backdrop" fetchPriority="high" />
             </div>
             <div className="hero-scrim" aria-hidden="true" />
             <div className="hero-content">
