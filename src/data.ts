@@ -33,7 +33,7 @@ export const teamGroups: TeamGroup[] = [
       { name: 'Henry Kasirye', role: 'Committee Chair\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/henry-kasirye-765088340/' } },
       { name: 'Deogratias Nyamhanga', role: 'Co-Chair\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/deogratias-nyamhanga/' } },
       { name: 'Joshua Mchaina', role: 'Graduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/joshua-mchaina-7a6292156/' } },
-      { name: 'JR Butoto', role: 'Graduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jrbutoto/' } },
+      { name: 'John Butoto', role: 'Graduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jrbutoto/' } },
       { name: 'Esther Bukuru', role: 'Graduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/esther-bukuru-b85948305/' } },
       { name: 'Samuel Nye', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/samuel-nye-166850393/' } },
       { name: 'Adrian Figueroa', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adrian-figueroa-7807a4305/' } },
