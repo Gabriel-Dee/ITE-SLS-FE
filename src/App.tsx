@@ -350,7 +350,7 @@ function ShowroomChapter({
                 >
                   Adam W. Herbert University Center
                 </a>
-                {' '}on Jacksonville’s campus — check-in Friday at 2:30 PM, through Saturday evening.
+                {' '}on Jacksonville’s campus — check-in Friday at 1:30 PM, through Saturday evening.
               </>
             }
             ctaLabel="Venue & lodging"
@@ -361,7 +361,7 @@ function ShowroomChapter({
             <div className="container">
               <div className="section-head center">
                 <p className="eyebrow">Summit schedule</p>
-                <h2 className="section-title">Technical program</h2>
+                <h2 className="section-title">Conference schedule</h2>
                 <p className="section-lead">Networking, professional sessions, and competitions across two conference days.</p>
               </div>
 
@@ -383,10 +383,9 @@ function ShowroomChapter({
                     <select id="sched-cat" value={scheduleCategory} onChange={(e) => setScheduleCategory(e.target.value)}>
                       <option value="all">All categories</option>
                       <option value="general">Opening & general</option>
-                      <option value="technical">Technical tracks</option>
                       <option value="career">Career development</option>
                       <option value="competition">Competitions</option>
-                      <option value="social">Gala & social</option>
+                      <option value="social">Networking & social</option>
                     </select>
                   </div>
                 </div>
@@ -538,14 +537,14 @@ function ShowroomChapter({
                   <p>Preferred overflow lodging near campus for Friday and Saturday nights. Shuttle service between the University Center and the host hotel is included for registered delegates.</p>
                   <ul>
                     <li>Request the ITE SLS group rate when booking</li>
-                    <li>Check-in opens Friday at 2:30 PM</li>
+                    <li>Check-in opens Friday at 1:30 PM</li>
                   </ul>
                 </div>
                 <div className="log-item">
                   <h4>Arrival</h4>
                   <p>Jacksonville International Airport (JAX) is the recommended hub. Campus shuttles run on a posted Friday–Saturday loop; rideshare drop-off is at the University Center entrance.</p>
                   <ul>
-                    <li>Tour of UNF starts Friday at 4:30 PM</li>
+                    <li>UNF tour runs Friday, 3:30 – 5:00 PM</li>
                     <li>Bring a photo ID for badge pickup</li>
                   </ul>
                 </div>
@@ -680,7 +679,7 @@ function ShowroomChapter({
                 <h2 className="footer-headline">Building the next transit leaders together.</h2>
                 <div className="footer-top-aside">
                   <p className="footer-top-copy">
-                    Student chapters across the Florida–Puerto Rico District meet at UNF for leadership, technical sessions, and the Collegiate Traffic Bowl.
+                    Student chapters across the Florida–Puerto Rico District meet at UNF for leadership, career workshops, and the Collegiate Traffic Bowl.
                   </p>
                   <button type="button" className="btn footer-cta" onClick={() => scrollTo('registration')}>
                     Registration info

@@ -47,25 +47,26 @@ export const teamGroups: TeamGroup[] = [
 
 export const scheduleData: ScheduleItem[] = [
   // Day 1: Friday, Feb 12
-  { id: 's1', title: 'Friday Check-in', time: '2:30 - 4:30 PM', category: 'general', day: 1 },
-  { id: 's2', title: 'Networking Session and Resume Review', time: '2:30 - 4:20 PM', category: 'career', day: 1 },
-  { id: 's3', title: 'Tour of UNF', time: '4:30 - 5:20 PM', category: 'general', day: 1 },
-  { id: 's4', title: 'On Campus UNF Activity', time: '5:30 - 6:20 PM', category: 'social', day: 1 },
-  { id: 's5', title: 'Dinner Off-Campus', time: '6:30 - 9:00 PM', category: 'social', day: 1 },
+  { id: 's1', title: 'Team Prep', time: '12:00 PM', category: 'general', day: 1 },
+  { id: 's2', title: 'Check-in', time: '1:30 - 4:30 PM', category: 'general', day: 1 },
+  { id: 's3', title: 'Networking', time: '2:30 - 3:30 PM', category: 'career', day: 1 },
+  { id: 's4', title: 'Resume Review or UNF Tour', time: '3:30 - 5:00 PM', category: 'career', day: 1 },
+  { id: 's5', title: 'Off-Campus Dinner', time: '5:00 - 7:00 PM', category: 'social', day: 1 },
 
   // Day 2: Saturday, Feb 13
-  { id: 's6', title: 'Saturday Check-in', time: '7:00 - 9:00 AM', category: 'general', day: 2 },
-  { id: 's7', title: 'Breakfast', time: '7:30 - 8:30 AM', category: 'general', day: 2 },
-  { id: 's8', title: 'Welcoming Assembly', time: '8:30 - 8:50 AM', category: 'general', day: 2 },
-  { id: 's9', title: 'Panel Discussion', time: '9:00 - 10:00 AM', category: 'career', day: 2 },
-  { id: 's10', title: 'Live Q/A', time: '10:00 - 10:30 AM', category: 'career', day: 2 },
-  { id: 's11', title: 'Full Assembly Workshop', time: '10:30 - 11:20 AM', category: 'technical', day: 2 },
-  { id: 's12', title: 'Breakout Workshops', time: '11:30 AM - 12:20 PM', category: 'technical', day: 2 },
-  { id: 's13', title: 'Group Photo', time: '12:20 - 12:30 PM', category: 'social', day: 2 },
-  { id: 's14', title: 'Keynote Speaker + Lunch', time: '12:30 - 1:55 PM', category: 'general', day: 2 },
-  { id: 's15', title: 'Collegiate Traffic Bowl', time: '2:00 - 5:20 PM', category: 'competition', day: 2 },
-  { id: 's16', title: 'Career Fair', time: '5:30 - 7:00 PM', category: 'career', day: 2 },
-  { id: 's17', title: 'Evening Reception + Dinner On-Campus', time: '7:00 - 9:00 PM', category: 'social', day: 2 },
+  { id: 's6', title: 'Breakfast', time: '7:30 - 8:30 AM', category: 'general', day: 2 },
+  { id: 's7', title: 'Welcome Remarks', time: '8:30 - 9:00 AM', category: 'general', day: 2 },
+  { id: 's8', title: 'Panel and Q&As', time: '9:00 - 10:15 AM', category: 'career', day: 2 },
+  { id: 's9', title: 'Networking Break', time: '10:15 - 10:30 AM', category: 'social', day: 2 },
+  { id: 's10', title: 'Workshop', time: '10:30 - 11:20 AM', category: 'career', day: 2, description: 'Career readiness, creating meaningful connections, and translating school work into projects.' },
+  { id: 's11', title: 'Group Photo', time: '11:20 - 11:40 AM', category: 'social', day: 2 },
+  { id: 's12', title: 'Keynote Speaker', time: '11:40 AM - 12:00 PM', category: 'general', day: 2 },
+  { id: 's13', title: 'Lunch', time: '12:00 - 12:45 PM', category: 'general', day: 2 },
+  { id: 's14', title: 'Breakout Workshop', time: '12:45 - 1:35 PM', category: 'career', day: 2, description: 'Resume preparation, communication improvement, interview preparation, and career path selection.' },
+  { id: 's15', title: 'Networking Break', time: '1:35 - 2:00 PM', category: 'social', day: 2 },
+  { id: 's16', title: 'ITE Traffic Bowl', time: '2:00 - 5:00 PM', category: 'competition', day: 2 },
+  { id: 's17', title: 'Career Fair / Networking', time: '5:00 - 6:30 PM', category: 'career', day: 2 },
+  { id: 's18', title: 'Dinner', time: '6:30 - 8:00 PM', category: 'social', day: 2 },
 ];
 
 export const triviaQuestions: TriviaQuestion[] = [
