@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect, useRef, type ReactNode } from 'react';
-import { scheduleData, triviaQuestions, sponsorPackages, EVENT_DATES, EVENT_PHOTOS_URL, PHOTOS_FROM } from './data';
+import { scheduleData, triviaQuestions, sponsorPackages, teamGroups, EVENT_DATES, EVENT_PHOTOS_URL, PHOTOS_FROM } from './data';
 import hero800 from './assets/images/hero-group-800.webp';
 import hero1280 from './assets/images/hero-group-1280.webp';
 import hero1920 from './assets/images/hero-group-1920.webp';
@@ -24,6 +24,8 @@ const galleryItems = [
       { id: 'g2', thumb: bowl800, url: bowl1920, title: 'Collegiate Traffic Bowl', description: 'Past summit — FIU, UF, and UNF teams hold up their answers during a Traffic Bowl round.' },
       { id: 'g3', thumb: imgBowlTeams, url: imgBowlTeams, title: 'Traffic Bowl teams', description: 'Past summit — FAMU-FSU, FAU, and UF teams at their buzzer tables with delegates.' },
     ];
+
+    const shownTeamGroups = teamGroups.filter((g) => g.members.length > 0);
 
     const DAYS = [
       { num: 1, label: 'Fri, Feb 12' },
@@ -223,6 +225,7 @@ function ShowroomChapter({
         { label: 'Gallery', id: 'gallery' },
         { label: 'Logistics', id: 'logistics' },
         { label: 'Sponsors', id: 'sponsors' },
+        ...(shownTeamGroups.length > 0 ? [{ label: 'Team', id: 'team' }] : []),
       ];
 
       return (
@@ -619,6 +622,38 @@ function ShowroomChapter({
               </div>
             </div>
           </section>
+
+          {shownTeamGroups.length > 0 && (
+            <section id="team" className="section section-alt" data-od-id="team">
+              <div className="container">
+                <div className="section-head center">
+                  <p className="eyebrow">Meet the team</p>
+                  <h2 className="section-title">Organizing team</h2>
+                  <p className="section-lead">SLS 2027 is organized by the ITE Student Chapter at the University of North Florida.</p>
+                </div>
+                {shownTeamGroups.map((g) => (
+                  <div key={g.title} className="tier-block">
+                    <p className="tier-label">{g.title}</p>
+                    <div className="team-grid">
+                      {g.members.map((m) => (
+                        <article key={m.name} className="team-member">
+                          {m.photo ? (
+                            <img className="team-photo" src={m.photo} alt={m.name} loading="lazy" decoding="async" />
+                          ) : (
+                            <div className="team-photo team-initials" aria-hidden="true">
+                              {m.name.split(' ').filter((w) => !w.endsWith('.')).map((w) => w[0]).slice(0, 2).join('')}
+                            </div>
+                          )}
+                          <h3 className="team-name">{m.name}</h3>
+                          <p className="team-role">{m.role}</p>
+                        </article>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
           </main>
 
           <footer className="site-footer" data-od-id="footer">

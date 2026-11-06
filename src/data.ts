@@ -1,4 +1,4 @@
-import { ScheduleItem, TriviaQuestion, SponsorPackage } from './types';
+import { ScheduleItem, TriviaQuestion, SponsorPackage, TeamGroup } from './types';
 
 // Also update DAYS labels in App.tsx and PHOTOS_FROM below if this changes.
 export const EVENT_DATES = 'February 12–13, 2027';
@@ -6,6 +6,12 @@ export const EVENT_DATES = 'February 12–13, 2027';
 // Shared OneDrive album for SLS 2027 photos. Empty = gallery shows the "photos from" note and no button.
 export const EVENT_PHOTOS_URL = '';
 export const PHOTOS_FROM = 'February 12, 2027';
+
+// Organizing team. A group with no members stays hidden; with no members at all, so do the section and its nav link.
+export const teamGroups: TeamGroup[] = [
+  { title: 'Faculty advisors', members: [] },
+  { title: 'Student organizing team', members: [] },
+];
 
 export const scheduleData: ScheduleItem[] = [
   // Day 1: Friday, Feb 12

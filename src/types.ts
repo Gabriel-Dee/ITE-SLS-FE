@@ -39,6 +39,17 @@ export interface AttendeeRegistration {
   ticketType: 'student-member' | 'student-nonmember' | 'professional' | 'sponsor';
 }
 
+export interface TeamMember {
+  name: string;
+  role: string;
+  photo?: string; // imported image; initials show until there is one
+}
+
+export interface TeamGroup {
+  title: string;
+  members: TeamMember[];
+}
+
 export interface GalleryItem {
   id: string;
   url: string;
