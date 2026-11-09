@@ -9,6 +9,7 @@ import imgJoshua from './assets/images/team-joshua-mchaina.webp';
 import imgJohn from './assets/images/team-john-butoto.webp';
 import imgEsther from './assets/images/team-esther-bukuru.webp';
 import imgRaymond from './assets/images/team-raymond-manento.webp';
+import imgProtik from './assets/images/team-protik-saha-palash.webp';
 import imgSamuel from './assets/images/team-samuel-nye.webp';
 import imgAdrian from './assets/images/team-adrian-figueroa.webp';
 import imgAbduel from './assets/images/team-abduel-mfangavo.webp';
@@ -46,15 +47,16 @@ export const teamGroups: TeamGroup[] = [
     members: [
       { name: 'Henry Kasirye', role: 'Committee Chair\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/henry-kasirye-765088340/' }, photo: imgHenry },
       { name: 'Deogratias Nyamhanga', role: 'Co-Chair\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/deogratias-nyamhanga/' }, photo: imgDeogratias },
+      { name: 'Adrian Figueroa', role: 'Programming & Social Events\nITE Student Chapter Secretary', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adrian-figueroa-7807a4305/' }, photo: imgAdrian },
+      { name: 'Samuel Nye', role: 'Programming & Social Events\nITE Student Chapter President', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/samuel-nye-166850393/' }, photo: imgSamuel },
+      { name: 'Raymond Manento', role: 'Finance & Fundraising\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/raymond-manento/' }, photo: imgRaymond },
+      { name: 'Protik Saha Palash', role: 'Finance & Fundraising\nGraduate Research Assistant, School of Engineering', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/protik-saha-palash/' }, photo: imgProtik },
+      { name: 'Robert Daniel', role: 'Event Logistics & Volunteer Coordination\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/eng-robert-daniel-103912235/' }, photo: imgRobert },
+      { name: 'Abduel Mfangavo', role: 'Event Logistics & Volunteer Coordination\nGraduate Research Assistant, School of Engineering', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/abduel-mfangavo-7869b8222/' }, photo: imgAbduel },
+      { name: 'Esther Bukuru', role: 'Event Logistics & Volunteer Coordination\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/esther-bukuru-b85948305/' }, photo: imgEsther },
+      { name: 'Gabriel Minzemalulu', role: 'Communication & Technology\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/gabriel-minzemalulu/' }, photo: imgGabriel },
       { name: 'Joshua Mchaina', role: 'ITE Student Chapter Supporting Leadership\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/joshua-mchaina-7a6292156/' }, photo: imgJoshua },
       { name: 'John Butoto', role: 'ITE Student Chapter Supporting Leadership\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jrbutoto/' }, photo: imgJohn },
-      { name: 'Esther Bukuru', role: 'Event Logistics & Volunteer Coordination\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/esther-bukuru-b85948305/' }, photo: imgEsther },
-      { name: 'Samuel Nye', role: 'Programming & Social Events', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/samuel-nye-166850393/' }, photo: imgSamuel },
-      { name: 'Adrian Figueroa', role: 'Programming & Social Events', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/adrian-figueroa-7807a4305/' }, photo: imgAdrian },
-      { name: 'Raymond Manento', role: 'Finance & Fundraising\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/raymond-manento/' }, photo: imgRaymond },
-      { name: 'Robert Daniel', role: 'Event Logistics & Volunteer Coordination\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/eng-robert-daniel-103912235/' }, photo: imgRobert },
-      { name: 'Abduel Mfangavo', role: 'Graduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/abduel-mfangavo-7869b8222/' }, photo: imgAbduel },
-      { name: 'Gabriel Minzemalulu', role: 'Communication\nGraduate Research Assistant, UNF Transportation Lab', link: { label: 'LinkedIn', url: 'https://www.linkedin.com/in/gabriel-minzemalulu/' }, photo: imgGabriel },
     ],
   },
 ];

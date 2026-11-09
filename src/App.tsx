@@ -14,6 +14,7 @@ import imgUnfCampus from './assets/images/unf-campus-905.webp';
 import imgDistrictLogo from './assets/images/ite-fprd-logo.png';
 import imgIteUnfLogo from './assets/images/ite-unf-student-chapter-logo-white.png';
 import imgIteUnfLogoColor from './assets/images/ite-unf-student-chapter-logo-osprey.png';
+import sponsorshipPackagePdf from './assets/docs/ITE-SLS-2027-Sponsorship-Package.pdf?url';
 
 const tmcSrcSet = `${tmc800} 800w, ${tmc1280} 1280w, ${tmc1920} 1920w`;
 const bowlSrcSet = `${bowl800} 800w, ${bowl1280} 1280w, ${bowl1920} 1920w`;
@@ -344,13 +345,13 @@ function ShowroomChapter({
                 Sessions at the{' '}
                 <a
                   className="showroom-link"
-                  href="https://www.unf.edu/universitycenter/"
+                  href="https://www.unf.edu/studentunion/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Adam W. Herbert University Center
+                  Senator Joe Carlucci Ballroom, Student Union Building, University of North Florida, Jacksonville
                 </a>
-                {' '}on Jacksonville’s campus — check-in Friday at 1:30 PM, through Saturday evening.
+                {' '}— check-in Friday at 1:30 PM, through Saturday evening.
               </>
             }
             ctaLabel="Venue & lodging"
@@ -530,11 +531,11 @@ function ShowroomChapter({
               <div className="log-grid">
                 <div className="log-item">
                   <h4>Venue</h4>
-                  <p>Adam W. Herbert University Center, University of North Florida — Jacksonville campus. Primary sessions in University Center meeting rooms and ballrooms.</p>
+                  <p>Senator Joe Carlucci Ballroom, Student Union Building, University of North Florida, Jacksonville.</p>
                 </div>
                 <div className="log-item">
                   <h4>Lodging</h4>
-                  <p>Preferred overflow lodging near campus for Friday and Saturday nights. Shuttle service between the University Center and the host hotel is included for registered delegates.</p>
+                  <p>Preferred overflow lodging near campus for Friday and Saturday nights. Shuttle service between the Student Union and the host hotel is included for registered delegates.</p>
                   <ul>
                     <li>Request the ITE SLS group rate when booking</li>
                     <li>Check-in opens Friday at 1:30 PM</li>
@@ -542,7 +543,7 @@ function ShowroomChapter({
                 </div>
                 <div className="log-item">
                   <h4>Arrival</h4>
-                  <p>Jacksonville International Airport (JAX) is the recommended hub. Campus shuttles run on a posted Friday–Saturday loop; rideshare drop-off is at the University Center entrance.</p>
+                  <p>Jacksonville International Airport (JAX) is the recommended hub. Campus shuttles run on a posted Friday–Saturday loop; rideshare drop-off is at the Student Union entrance.</p>
                   <ul>
                     <li>UNF tour runs Friday, 3:30 – 5:00 PM</li>
                     <li>Bring a photo ID for badge pickup</li>
@@ -584,6 +585,9 @@ function ShowroomChapter({
                 <p className="eyebrow">Call for sponsors</p>
                 <h3 className="section-title" style={{ fontSize: 'var(--text-3xl)' }}>Sponsorship packages</h3>
                 <p className="section-lead">Support one of Florida’s leading student-led transportation gatherings: connect talent, advance ideas, build communities, and shape a stronger tomorrow.</p>
+                <a className="btn btn-dark" style={{ marginTop: 24 }} href={sponsorshipPackagePdf} download="ITE-SLS-2027-Sponsorship-Package.pdf">
+                  Download the sponsorship package (PDF)
+                </a>
               </div>
               <div className="package-grid">
                 {sponsorPackages.map((p) => (
@@ -713,11 +717,11 @@ function ShowroomChapter({
                     <button type="button" onClick={() => scrollTo('logistics')}>Logistics</button>
                     <button type="button" onClick={() => scrollTo('sponsors')}>Sponsors</button>
                     <button type="button" onClick={() => scrollTo('registration')}>Registration</button>
-                    <a className="footer-ext" href="https://www.unf.edu/universitycenter/" target="_blank" rel="noopener noreferrer">University Center</a>
+                    <a className="footer-ext" href="https://www.unf.edu/studentunion/" target="_blank" rel="noopener noreferrer">Student Union</a>
                   </div>
                   <div className="footer-col">
                     <p className="footer-col-title">Host</p>
-                    <p className="footer-col-note">Adam W. Herbert University Center</p>
+                    <p className="footer-col-note">Senator Joe Carlucci Ballroom, Student Union Building</p>
                     <p className="footer-col-note">University of North Florida</p>
                     <p className="footer-col-note">Jacksonville, FL</p>
                   </div>
