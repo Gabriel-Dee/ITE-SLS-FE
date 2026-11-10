@@ -680,7 +680,7 @@ function ShowroomChapter({
           <footer className="site-footer" data-od-id="footer">
             <div className="container">
               <div className="footer-top">
-                <h2 className="footer-headline">Building the next transit leaders together.</h2>
+                <h2 className="footer-headline">Building the next transportation leaders together.</h2>
                 <div className="footer-top-aside">
                   <p className="footer-top-copy">
                     Student chapters across the Florida–Puerto Rico District meet at UNF for leadership, career workshops, and the Collegiate Traffic Bowl.
