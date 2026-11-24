@@ -546,7 +546,7 @@ function ShowroomChapter({
                   <p>Jacksonville International Airport (JAX) is the recommended hub. Campus shuttles run on a posted Friday–Saturday loop; rideshare drop-off is at the Student Union entrance.</p>
                   <ul>
                     <li>UNF tour runs Friday, 3:30 – 5:00 PM</li>
-                    <li>Bring a photo ID for badge pickup</li>
+                    <li>Show your registration confirmation at check-in to pick up your badge</li>
                   </ul>
                 </div>
               </div>
@@ -724,6 +724,11 @@ function ShowroomChapter({
                     <p className="footer-col-note">Senator Joe Carlucci Ballroom, Student Union Building</p>
                     <p className="footer-col-note">University of North Florida</p>
                     <p className="footer-col-note">Jacksonville, FL</p>
+                  </div>
+                  <div className="footer-col">
+                    <p className="footer-col-title">Follow</p>
+                    <a className="footer-ext" href="https://www.instagram.com/ite_unf/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a className="footer-ext" href="https://www.linkedin.com/company/ite-unf-student-chapter/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                   </div>
                 </div>
               </div>
